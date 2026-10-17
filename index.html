@@ -52,7 +52,8 @@
     "sameAs": [
       "https://instagram.com/urbanwildtnf",
       "https://droper.app/store/urban-wild-tnf",
-      "https://enjoei.com.br/@urban-27db4c"
+      "https://enjoei.com.br/@urban-27db4c",
+      "https://www.enjoei.com.br/@urban-c22dd4"
     ]
   }
   </script>
@@ -240,7 +241,7 @@
 
         <div class="products__more">
           <a class="btn btn--primary" href="https://droper.app/store/urban-wild-tnf" data-link="droper" data-droper-only target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-bag"></use></svg>Ver todas na Droper</a>
-          <a class="btn btn--secondary" href="https://enjoei.com.br/@urban-27db4c" data-link="enjoei" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-bag"></use></svg>Ver todas no Enjoei</a>
+          <div class="link-group" data-enjoei data-template="Ver {labelLower} no Enjoei" data-class="btn btn--secondary" data-icon="bag"></div>
           <a class="btn btn--secondary" href="https://instagram.com/urbanwildtnf" data-link="instagram" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>Seguir no Instagram</a>
         </div>
       </div>
@@ -273,19 +274,16 @@
           <div class="stat">
             <p class="stat__value text-silver">+<span data-stat="itemsSold">1.000</span></p>
             <p class="stat__label">itens vendidos</p>
-            <p class="stat__sub">somando Enjoei e Droper</p>
           </div>
           <div class="stat">
             <p class="stat__value text-silver" data-stat="droperRating">4,95</p>
-            <p class="stat__stars text-silver" aria-hidden="true">★★★★★</p>
             <p class="stat__label">na Droper</p>
-            <p class="stat__sub">reputação dada pelos clientes</p>
+            <p class="stat__stars text-silver" aria-hidden="true">★★★★★</p>
           </div>
           <div class="stat">
             <p class="stat__value text-silver" data-stat="enjoeiRating">5</p>
-            <p class="stat__stars text-silver" aria-hidden="true">★★★★★</p>
             <p class="stat__label">estrelas no Enjoei</p>
-            <p class="stat__sub">reputação dada pelos clientes</p>
+            <p class="stat__stars text-silver" aria-hidden="true">★★★★★</p>
           </div>
         </div>
 
@@ -308,7 +306,7 @@
               <span class="channel-card__rating-text"><span data-stat="enjoeiRating">5</span> estrelas</span>
             </div>
             <p class="channel-card__text" data-needs-stats>A Urban Wild também vende no Enjoei: mais de <span data-stat="enjoeiSales">660</span> vendas e <span data-stat="enjoeiReviews">295</span> avaliações 5 estrelas.</p>
-            <a class="btn btn--primary channel-card__cta" href="https://enjoei.com.br/@urban-27db4c" data-link="enjoei" target="_blank" rel="noopener noreferrer">Ver a Urban Wild no Enjoei<svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg></a>
+            <div class="channel-card__buttons" data-enjoei data-template="Ver {labelLower} no Enjoei" data-class="btn btn--primary" data-icon-after="arrow-right"></div>
           </article>
         </div>
       </div>
@@ -517,7 +515,7 @@
         <div class="final-cta__actions">
           <a class="btn btn--primary" href="https://wa.me/5548988180974" data-link="whatsapp" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Falar no WhatsApp</a>
           <a class="btn btn--secondary" href="https://droper.app/store/urban-wild-tnf" data-link="droper" data-droper-only target="_blank" rel="noopener noreferrer">Comprar na Droper</a>
-          <a class="btn btn--secondary" href="https://enjoei.com.br/@urban-27db4c" data-link="enjoei" target="_blank" rel="noopener noreferrer">Comprar no Enjoei</a>
+          <div class="link-group" data-enjoei data-template="Comprar no Enjoei · {label}" data-class="btn btn--secondary"></div>
           <a class="btn btn--secondary" href="#compra-direta">Compra direta</a>
           <a class="btn btn--secondary" href="#encomendas">Encomendas</a>
         </div>
@@ -530,46 +528,34 @@
   <!-- Rodapé -->
   <footer class="site-footer">
     <div class="container">
-      <div class="site-footer__grid">
-        <div>
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
           <img class="site-footer__logo" src="assets/images/brand/logo-light.png" alt="Urban Wild" width="1051" height="572" loading="lazy">
-          <p>Revenda independente de roupas outdoor importadas, novas e seminovas.</p>
+          <p class="site-footer__tagline">Roupas outdoor importadas, The North Face e Patagonia.</p>
         </div>
-        <nav aria-label="Peças">
-          <h2 class="site-footer__heading">PEÇAS</h2>
-          <ul class="site-footer__links">
-            <li><a href="#pecas" data-apply-filter="all">Todas as peças</a></li>
-            <li><a href="#pecas" data-apply-filter="puffer">Puffers</a></li>
-            <li><a href="#pecas" data-apply-filter="fleece">Fleeces</a></li>
-            <li><a href="#pecas" data-apply-filter="impermeavel">Impermeáveis</a></li>
-            <li><a href="#pecas" data-apply-filter="camiseta">Camisetas</a></li>
-            <li><a href="#pecas" data-apply-filter="mochila-acessorio">Mochilas e acessórios</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Urban Wild">
-          <h2 class="site-footer__heading">URBAN WILD</h2>
-          <ul class="site-footer__links">
+        <div class="site-footer__actions">
+          <a class="btn btn--primary" href="https://wa.me/5548988180974" data-link="whatsapp" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>WhatsApp</a>
+          <a class="btn btn--secondary" href="https://instagram.com/urbanwildtnf" data-link="instagram" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#icon-instagram"></use></svg>Instagram</a>
+        </div>
+      </div>
+
+      <div class="site-footer__rule" role="presentation"></div>
+
+      <div class="site-footer__nav">
+        <nav aria-label="Navegar no rodapé">
+          <h2 class="site-footer__heading">Navegar</h2>
+          <ul class="site-footer__links site-footer__links--row">
+            <li><a href="#pecas">Peças</a></li>
             <li><a href="#camping">Camping</a></li>
             <li><a href="#onde-comprar">Onde comprar</a></li>
-            <li><a href="#compra-direta">Compra direta</a></li>
             <li><a href="#encomendas">Encomendas</a></li>
-            <li><a href="#sobre">Sobre a loja</a></li>
-            <li><a href="#para-quem">Para quem é</a></li>
-            <li><a href="#perguntas">Perguntas frequentes</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Contato">
-          <h2 class="site-footer__heading">CONTATO</h2>
-          <ul class="site-footer__links">
-            <li><a href="https://wa.me/5548988180974" data-link="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><a href="https://instagram.com/urbanwildtnf" data-link="instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#perguntas">Perguntas</a></li>
           </ul>
         </nav>
         <nav aria-label="Também em">
-          <h2 class="site-footer__heading">TAMBÉM EM</h2>
-          <ul class="site-footer__links">
+          <h2 class="site-footer__heading">Também em</h2>
+          <ul class="site-footer__links site-footer__links--row" data-enjoei data-template="Enjoei ({label})">
             <li data-droper-only><a href="https://droper.app/store/urban-wild-tnf" data-link="droper" target="_blank" rel="noopener noreferrer">Droper</a></li>
-            <li><a href="https://enjoei.com.br/@urban-27db4c" data-link="enjoei" target="_blank" rel="noopener noreferrer">Enjoei</a></li>
           </ul>
         </nav>
       </div>
@@ -577,7 +563,7 @@
       <div class="site-footer__legal">
         <p>A Urban Wild é uma revenda independente, sem afiliação com The North Face, Patagonia ou outras marcas citadas. Todas as marcas pertencem aos seus respectivos donos.</p>
         <!-- TODO: CNPJ, razão social e endereço (quando houver). -->
-        <p>© <span data-year>2026</span> Urban Wild.</p>
+        <p>© <span data-year>2026</span> Urban Wild</p>
       </div>
     </div>
   </footer>

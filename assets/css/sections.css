@@ -130,7 +130,7 @@
 }
 
 @media (min-width: 641px) {
-  .final-cta__actions { flex-direction: row; max-width: none; }
+  .final-cta__actions { flex-direction: row; flex-wrap: wrap; max-width: 920px; }
 }
 
 .final-cta__micro {

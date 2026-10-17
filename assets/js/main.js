@@ -14,6 +14,35 @@
     if (url) a.setAttribute("href", url);
   });
 
+  // Lojas do Enjoei (config.enjoei.stores): links gerados a partir do config.
+  var stores = (cfg.enjoei && cfg.enjoei.stores) || [];
+  document.querySelectorAll("[data-enjoei]").forEach(function (box) {
+    var template = box.getAttribute("data-template") || "Enjoei ({label})";
+    var cls = box.getAttribute("data-class") || "";
+    var iconBefore = box.getAttribute("data-icon");
+    var iconAfter = box.getAttribute("data-icon-after");
+    var asList = box.tagName === "UL";
+    stores.forEach(function (st) {
+      var a = el("a", cls);
+      a.href = st.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      if (iconBefore) a.appendChild(icon(iconBefore));
+      a.appendChild(document.createTextNode(
+        template.replace("{labelLower}", st.label.toLowerCase()).replace("{label}", st.label)
+      ));
+      if (iconAfter) a.appendChild(icon(iconAfter));
+      if (asList) {
+        var li = document.createElement("li");
+        li.appendChild(a);
+        box.appendChild(li);
+      } else {
+        box.appendChild(a);
+      }
+    });
+    box.hidden = !stores.length;
+  });
+
   // Botões de WhatsApp com mensagem pronta (config.whatsappMessages).
   document.querySelectorAll("[data-wa]").forEach(function (a) {
     var msg = cfg.whatsappMessages && cfg.whatsappMessages[a.getAttribute("data-wa")];

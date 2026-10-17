@@ -664,36 +664,95 @@
   color: var(--fg-muted);
 }
 
-/* ===== Footer ===== */
+/* ===== Footer (enxuto e premium) ===== */
 .site-footer {
-  padding-block: var(--space-16) var(--space-8);
-  background: var(--color-black);
+  position: relative;
+  padding-block: var(--space-16) var(--space-12);
+  background:
+    radial-gradient(ellipse 45% 70% at 12% 0%, rgba(255, 255, 255, 0.04), transparent 70%),
+    var(--color-ink);
   color: var(--color-gray-400);
   font-size: var(--text-caption);
+  overflow: hidden;
 }
 
-.site-footer__grid { display: grid; gap: var(--space-8); }
+/* Grão de filme sutil, abaixo do conteúdo */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: var(--grain-image);
+}
 
-@media (min-width: 641px) {
-  .site-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.site-footer > .container { position: relative; z-index: 1; }
+
+@media (min-width: 1025px) {
+  .site-footer { padding-block: var(--space-24) var(--space-16); }
+}
+
+.site-footer__top {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
 }
 
 @media (min-width: 1025px) {
-  .site-footer__grid { grid-template-columns: 1.6fr repeat(4, 1fr); }
+  .site-footer__top { grid-template-columns: 1fr auto; }
 }
 
-.site-footer__logo { width: auto; height: 72px; margin-bottom: var(--space-4); }
+.site-footer__brand { display: grid; gap: var(--space-4); justify-items: start; }
+.site-footer__logo { width: auto; height: 88px; }
+.site-footer__tagline { max-width: 420px; font-size: var(--text-body); color: var(--color-gray-400); }
+
+.site-footer__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 641px) {
+  .site-footer__actions { flex-direction: row; }
+}
+
+/* Divisória hairline prata que some nas pontas */
+.site-footer__rule {
+  height: 1px;
+  margin-block: var(--space-12);
+  background: linear-gradient(90deg, transparent, #8F8F8F 30%, #D9D9D9 50%, #8F8F8F 70%, transparent);
+  opacity: 0.6;
+}
+
+.site-footer__nav {
+  display: grid;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1025px) {
+  .site-footer__nav { grid-template-columns: auto auto; justify-content: space-between; gap: var(--space-16); }
+}
 
 .site-footer__heading {
   margin-bottom: var(--space-3);
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  color: var(--color-white);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
 }
 
 .site-footer__links { display: grid; gap: var(--space-1); }
+
+.site-footer__links--row {
+  grid-auto-flow: row;
+}
+
+@media (min-width: 641px) {
+  .site-footer__links--row { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-8); }
+}
 
 .site-footer__links a {
   display: inline-flex;
@@ -701,20 +760,41 @@
   min-height: var(--tap-min);
   color: var(--color-gray-400);
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 calc(50% + 11px);
+  background-size: 0 1px;
+  transition:
+    color 250ms var(--ease),
+    background-size 250ms var(--ease);
 }
 
-.site-footer__links a:hover { color: var(--color-white); text-decoration: underline; }
+.site-footer__links a:hover {
+  color: var(--color-white);
+  background-size: 100% 1px;
+}
+
+.site-footer a:focus-visible { outline-color: var(--color-white); }
 
 .site-footer__legal {
   display: grid;
   gap: var(--space-2);
-  margin-top: var(--space-12);
-  padding-top: var(--space-6);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: var(--space-16);
+  font-size: var(--text-small);
+  color: var(--color-gray-400);
+}
+
+@media (min-width: 1025px) {
+  .site-footer__legal { grid-template-columns: 1fr auto; gap: var(--space-8); align-items: end; }
+  .site-footer__legal p:first-child { max-width: 760px; }
 }
 
 @media (max-width: 640px) {
-  .site-footer { padding-bottom: calc(var(--space-8) + 72px); }
+  .site-footer { padding-bottom: calc(var(--space-12) + 72px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__links a { transition: none; }
 }
 
 /* ===== MobileCtaBar ===== */
@@ -853,7 +933,7 @@
   display: grid;
   gap: var(--space-8);
   margin-bottom: var(--space-12);
-  padding-block: var(--space-8);
+  padding-block: var(--space-12);
   border-block: 1px solid var(--line);
   text-align: center;
 }
@@ -870,24 +950,18 @@
 }
 
 .stat__stars {
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
   font-size: 1.25rem;
   letter-spacing: 0.18em;
   line-height: 1;
 }
 
 .stat__label {
-  margin-top: var(--space-2);
+  margin-top: var(--space-3);
   font-family: var(--font-display);
   font-size: 1.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.stat__sub {
-  margin-top: var(--space-1);
-  font-size: var(--text-caption);
-  color: var(--fg-muted);
 }
 
 /* ===== Cartões de canal (Droper, Enjoei) ===== */
@@ -1053,4 +1127,13 @@
   margin-top: var(--space-4);
   font-size: var(--text-caption);
   color: var(--fg-muted);
+}
+
+/* Grupos de links gerados pelo JS (lojas do Enjoei) */
+.link-group { display: contents; }
+
+.channel-card__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
 }

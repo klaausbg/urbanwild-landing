@@ -14,7 +14,7 @@ window.UW_PRODUCTS = [
     price: 1299,
     images: [{ src: "assets/images/products/placeholder.svg", alt: "Foto da peça em breve" }],
     droperUrl: "https://droper.app/store/urban-wild-tnf",
-    enjoeiUrl: "https://enjoei.com.br/@urban-27db4c",
+    enjoeiUrl: "https://www.enjoei.com.br/",
     placeholder: true
   },
   {
@@ -38,7 +38,7 @@ window.UW_PRODUCTS = [
     price: 899,
     images: [{ src: "assets/images/products/placeholder.svg", alt: "Foto da peça em breve" }],
     droperUrl: "",
-    enjoeiUrl: "https://enjoei.com.br/@urban-27db4c",
+    enjoeiUrl: "https://www.enjoei.com.br/",
     placeholder: true
   },
   {
@@ -50,7 +50,7 @@ window.UW_PRODUCTS = [
     price: 149,
     images: [{ src: "assets/images/products/placeholder.svg", alt: "Foto da peça em breve" }],
     droperUrl: "https://droper.app/store/urban-wild-tnf",
-    enjoeiUrl: "https://enjoei.com.br/@urban-27db4c",
+    enjoeiUrl: "https://www.enjoei.com.br/",
     placeholder: true
   },
   {

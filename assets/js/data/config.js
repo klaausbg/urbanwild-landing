@@ -2,17 +2,23 @@
 window.UW_CONFIG = {
   whatsapp: "https://wa.me/5548988180974",
   instagram: "https://instagram.com/urbanwildtnf",
-  enjoei: "https://enjoei.com.br/@urban-27db4c",
+  // Lojas do Enjoei. O label aparece nos botões e no rodapé; troque à vontade.
+  enjoei: {
+    stores: [
+      { label: "Loja 1", url: "https://enjoei.com.br/@urban-27db4c" },
+      { label: "Loja 2", url: "https://www.enjoei.com.br/@urban-c22dd4" }
+    ]
+  },
   siteUrl: "https://urbanwildtnf.com.br/",
 
   // Números do site: um só lugar. Se confirmed ficar false, os blocos com números somem.
   stats: {
     confirmed: true,
     source: "informado pelo dono em 10/2026",
-    itemsSold: "1.000",     // itens vendidos, somando Enjoei e Droper (mostrado como "mais de")
+    itemsSold: "1.000",     // total de itens vendidos (mostrado como "mais de")
     enjoeiSales: "660",     // vendas no Enjoei (mostrado como "mais de")
     enjoeiReviews: "295",   // avaliações 5 estrelas no Enjoei
-    droperRating: "4,95",   // reputação dada pelos clientes na Droper
+    droperRating: "4,95",   // nota dos clientes na Droper
     enjoeiRating: "5"       // estrelas no Enjoei
   },
 
