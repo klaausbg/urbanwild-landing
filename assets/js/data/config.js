@@ -1,6 +1,6 @@
 /* Dados do site (global UW_CONFIG). Para atualizar números, links e textos, mexa só aqui. */
 window.UW_CONFIG = {
-  whatsapp: "https://wa.me/5548988180974",
+  whatsapp: "https://wa.me/5548988338742",
   instagram: "https://instagram.com/urbanwildtnf",
   // Lojas do Enjoei. O label aparece nos botões e no rodapé; troque à vontade.
   enjoei: {
